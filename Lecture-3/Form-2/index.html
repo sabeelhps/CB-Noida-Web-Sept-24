@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Form</h1>
+
+    <!-- GET : Data is sent as Query String Params -->
+    <h2>GET</h2>
+    <form action="" method="get">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <h2>POST</h2>
+    <!-- POST : Data is send inside request body or Form Data-->
+    <form action="" method="post">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password">
+        <button type="submit">Submit</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <form action="">
+        <fieldset>
+            <legend>Personal Info</legend>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" placeholder="Name">
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" placeholder="Age">
+            </div>
+            <div>
+                <label for="college">College</label>
+                <input type="text" name="college" id="college" placeholder="College">
+            </div>
+            <div>
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male">
+            </div>
+            <div>
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="female">
+            </div>
+            <div>
+                <label for="other">Other</label>
+                <input type="radio" name="gender" id="other">
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Educational Info</legend>
+            <label for="marksheet">Marksheet</label>
+            <input type="file" name="marksheet" id="marksheet">
+        </fieldset>
+        <button type="submit">Submit</button>
+    </form>
+    
+</body>
+</html>
