@@ -1,0 +1,27 @@
+section{
+    height: 100px;
+    width: 100px;
+    border: 3px solid black;
+    background-color: palegreen;
+}
+
+section:hover{
+    border-radius: 50%;
+    background-color: palevioletred;
+}
+
+input:disabled{
+    border: 4px solid red;
+}
+
+a:visited{
+    color: red;
+}
+
+h1:active{
+    color: green;
+}
+
+input:focus{
+    background-color: lightsalmon;
+}

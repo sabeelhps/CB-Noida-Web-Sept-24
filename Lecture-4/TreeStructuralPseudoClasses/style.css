@@ -1,0 +1,29 @@
+/* ol li:nth-of-type(odd){
+    color: lightcoral;
+}
+
+ol li:nth-of-type(even){
+    color: lightseagreen;
+} */
+
+ul li:nth-of-type(3){
+    border: 3px solid black;
+}
+
+ol li:nth-of-type(2n+7){
+    color: green;
+}
+
+ol li:first-child{
+    color: palevioletred;
+}
+
+ol li:last-child{
+    border: 2px solid gray;
+}
+
+p::first-letter{
+    font-size: 30px;
+    color: red;
+}
+

@@ -1,0 +1,56 @@
+/* Element Selector */
+
+h1{
+    color: palevioletred;
+    border:2px solid black;
+}
+
+h3{
+    color: lightcoral;
+    background-color: lightblue;
+}
+
+
+/* Id Selector : Ids are unique to each element */
+
+#special{
+    text-decoration: line-through;
+}
+
+/* Class Selector : Can be given to many elements */
+.fav-movie{
+    font-weight: bold;
+    color: palegreen;
+
+}
+
+.para{
+    font-size: 30px;
+    font-style: italic;
+}
+
+.one{
+   color: aqua;
+   text-decoration: underline; 
+}
+
+
+/* Attribute Selector */
+
+a[href="http://google.com"]{
+    color: lightseagreen;
+    font-size: 30px;
+}
+
+input[type="email"]{
+    background-color: lightblue;
+    border: 3px solid red;
+}
+
+
+/* Universal Selector */
+*{
+    border:2px solid gray;
+    margin: 0;
+    padding: 0;
+}
