@@ -1,0 +1,23 @@
+/* https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Cascade_and_inheritance */
+
+#heading{
+    color: aqua;
+}
+
+h1{
+    color: palegreen;
+}
+
+.main-heading{
+    color: purple;
+}
+
+ul>li{
+    /* color: lightcoral; */
+    /* font-size: 40px; */
+    border-top: 3px solid lightpink;
+}
+
+ol, ol> li{
+    border-top: inherit;
+}

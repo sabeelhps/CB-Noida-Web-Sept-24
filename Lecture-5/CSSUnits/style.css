@@ -1,0 +1,29 @@
+section{
+    width: 400px;
+    height: 200px;
+    border: 4px solid black;
+    background-color: paleturquoise;
+}
+
+div{
+    height: 40%;
+    width: 60%;
+    border: 3px solid lightcoral;
+    background-color: lightsalmon;
+}
+
+article{
+    font-size: 20px;
+}
+ul{
+    /* font-size: 2em; */
+    font-size: 2rem;
+}
+
+
+article:nth-of-type(2){
+    border: 2px solid black;
+    background-color: aqua;
+    width: 70vw;
+    height: 30vh;
+}
