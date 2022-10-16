@@ -1,0 +1,12 @@
+/* https://www.zomato.com/ncr/sector-18-noida-restaurants */
+
+figure{
+    width: 300px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    box-shadow: 2px 4px 3px lightgrey;
+}
+
+figure img{
+    width: 100%;
+}
