@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    width: 150px;
+    display: inline-block;
+    margin-left: 30px;
+}
+
+nav ul{
+    list-style: none;
+    padding: 16px;
+    background-color: #023047;
+}
+
+nav ul a{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+}
