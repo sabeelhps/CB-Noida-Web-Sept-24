@@ -1,5 +1,7 @@
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
 
+/* Flexbox is a 1D Layout : Elements will be arranged either in row, column etc. */
+
 #container{
     width: 80vw;
     height: 600px;
