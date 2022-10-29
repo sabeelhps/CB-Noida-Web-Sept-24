@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+section{
+    width: 400px;
+    border: 2px solid black;
+    margin: 30px auto;
+    font-size: 24px;
+    height: 300px;
+    overflow: scroll;
+}
+
+ul{
+    list-style: none;
+}
+
+p{
+    font-size: 24px;
+    white-space:nowrap;
+    overflow-x: hidden;
+    text-overflow:ellipsis;
+    padding: 10px;
+}
+
+p:hover{
+    text-overflow: clip;
+    overflow-x: scroll;
+}
