@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background-color: aqua;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+
+main{
+    margin-top: 6rem;
+}

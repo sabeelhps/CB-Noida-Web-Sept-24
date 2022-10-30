@@ -1,0 +1,25 @@
+div{
+    height: 200px;
+    width: 200px;
+    margin: 10px auto;
+    animation: 1s ease-in infinite alternate droppingball;
+}
+
+div img{
+    height: 100%;
+    width: 100%;
+    animation: 1s linear infinite rotateball;
+}
+
+@keyframes droppingball{
+    100%{
+        transform: translateY(550px);
+    }
+}
+
+@keyframes rotateball{
+    100%{
+        transform: rotateZ(1turn);
+    }
+}
+

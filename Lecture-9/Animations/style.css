@@ -1,0 +1,39 @@
+section{
+    width: 250px;
+    border: 4px solid black;
+    background-color: palevioletred;
+    height: 30px;
+    animation-name: slider;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+    /* animation-delay: 2s; */
+    animation-direction: normal;
+    /* animation-direction: reverse; */
+    /* animation-direction: alternate; */
+    /* animation-direction: alternate-reverse; */
+    /* animation-fill-mode: forwards; */
+    animation-fill-mode: backwards;
+}
+
+@keyframes slider{
+    25%{
+        height: 150px;
+        width: 300px;
+        background-color: lightgreen;
+    }
+    50%{
+        height: 300px;
+        width: 150px;
+        background-color: aqua;
+    }
+    75%{
+        height: 500px;
+        width: 200px;
+        background-color: lightcoral;
+    }
+    100%{
+        height: 600px;
+        width: 250px;
+        background-color: lightgray;
+    }
+}

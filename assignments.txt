@@ -5,3 +5,7 @@
 3.Phonebook
 
 4.Zomato Food Card
+
+5.Equalizer
+
+6.Hover Button
