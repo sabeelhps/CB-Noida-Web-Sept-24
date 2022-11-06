@@ -1,0 +1,13 @@
+:root{
+    --heading-ka-border:3px solid black;
+    --heading-ka-background:aqua;
+    --heading-ka-font:2.2rem;
+    --heading-ka-color: #ccc;
+}
+
+h1{
+    background-color: var(--heading-ka-background);
+    color:var(--heading-ka-color);
+    border: var(--heading-ka-border);
+    font-size: var(--heading-ka-font);
+}

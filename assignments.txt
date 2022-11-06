@@ -9,3 +9,5 @@
 5.Equalizer
 
 6.Hover Button
+
+7.Complete Tour and Travels Home Page
