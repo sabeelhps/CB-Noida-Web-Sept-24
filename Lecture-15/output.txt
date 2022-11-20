@@ -1,0 +1,39 @@
+const fruits = ['Apple','Guava','Oranges','Mango'];
+undefined
+fruits
+(4) ['Apple', 'Guava', 'Oranges', 'Mango']
+fruits.indexOf('Orange')
+-1
+fruits.indexOf('Oranges')
+2
+
+---------------------------------------------------
+
+const fruits = ['Apple','Guava','Oranges','Mango'];
+undefined
+fruits.includes('Mango')
+true
+fruits.includes('Banana')
+false
+
+
+---------------------------------
+
+arr
+(6) [1, 2, 3, 4, 5, 6]
+arr.reverse()
+(6) [6, 5, 4, 3, 2, 1]
+arr 
+(6) [6, 5, 4, 3, 2, 1]
+
+
+----------------------------
+
+[]==false 
+true
+0==[] 
+true
+0==""
+true
+[1,2,3]=="1,2,3";
+true

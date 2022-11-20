@@ -1,0 +1,42 @@
+1.You are given a number n .print all the even numbers upto n.
+
+ans:
+    
+
+
+
+2.You are given a number n . find sum of all the numbers upto n.
+
+
+ans:
+    
+
+3.You are given a number n. Reverse all the digit in a number
+    e.g.1->  = 54123 
+    anss = 32145
+
+    e.g.2-> 67491
+        ans = 19476
+
+
+4.You are given a number n. You have to print the table for that number.
+
+5.You are given a number n. You have to check whether the number is palindrome
+
+6.You are given a number n . You have to check whether the given number is armstrong number
+
+    e.g : 371
+        
+        27+343+1 =>371 - is a armstrong number
+
+7.Print all the factors of a given number.
+
+8.Convert given temprature in celcius to Fahrenheit (Google the formula)
+
+
+9.You are given two numbers n and m. find the sum of all numbers in this range(n and m including).
+
+10.You are given a string = "This fox jumps over a white lazy dog"
+                            "sihT xof spmuj revo a etihw yzal god"
+
+
