@@ -36,7 +36,7 @@ const foods = foodNames.map((foodName) => {
     return { name: foodName, price: 0, isAvailable: false }
 });
 
-console.log(foods);
+// console.log(foods);
 // console.table(foods);
 
 
@@ -52,8 +52,8 @@ function isEven(num) {
 
 const evenNums = nums.filter(isEven);
 
-console.log(nums);
-console.log(evenNums);
+// console.log(nums);
+// console.log(evenNums);
 
 
 
@@ -91,12 +91,12 @@ function isOnionGarlicFree(food) {
 }
 
 
-console.log(dishes);
+// console.log(dishes);
 const vegMenu = dishes.filter(isVeg);
-console.log(vegMenu);
+// console.log(vegMenu);
 
 const jainMenu = dishes.filter(isVeg).filter(isOnionGarlicFree);
-console.log(jainMenu);
+// console.log(jainMenu);
 
 
 
@@ -128,8 +128,49 @@ function add(acc, curr) {
 
 const sumOfNums = nums.reduce((sum, curr) => sum + curr, 0);
 // const sumOfNums = nums.reduce(add, 0);
+// console.log(sumOfNums);
 
-console.log(sumOfNums);
+const totalAmount = cart.reduce((amount, item) => amount + item.price * item.qty, 0);
+// console.log(totalAmount);
+
+
+
+
+// ----------------------------------------sort-----------
+
+
+const numList = [1, 2, 10, 11, 20, 30, 6, 7, 8, 9];
+
+console.log(numList);
+
+numList.sort((a,b)=> a-b);
+
+console.log(numList);
+
+
+// --------------------------------some------------
+
+
+const isPresent = numList.some((num) => num === 21);
+
+console.log(isPresent);
+
+
+// -----------------------------------find----------------
+
+
+const macbook = cart.find((item) => item.name.toLowerCase() === 'apple watch');
+
+
+if (macbook) {
+    console.log(macbook);
+} else {
+    console.log('Nahi mila');
+}
+
+
+
+
 
 
 
