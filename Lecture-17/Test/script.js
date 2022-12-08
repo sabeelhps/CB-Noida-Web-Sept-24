@@ -186,7 +186,7 @@ function capitalizeFirstLetter(str) {
 capitalizeFirstLetter(str1);
 
 
-// ----------------------Remove repeated words from sentence-
+// ----------------------Remove repeated words from sentence--------------
 
 
 const sentence1 = "I dont repeat mistakes i date mistakes mistakes date repeat";
@@ -207,7 +207,7 @@ console.log(sentence1);
 console.log(removeDuplicateWords(sentence1));
 
 
-// -----------------flattening the array
+// -----------------flattening the array----------
 
 
 const myArr = [[1, 2], [3, 4, 5], ["Hello", true], [5, [true, false]], 99, 100];
