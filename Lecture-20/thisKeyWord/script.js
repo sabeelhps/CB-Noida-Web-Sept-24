@@ -5,6 +5,7 @@
 // }
 
 // fun();
+// window.fun();
 
 // const person = {
 //     name: 'Kartik',
@@ -15,6 +16,8 @@
 //         console.log(`Hello from ${this.name}`);
 //     }
 // }
+
+// person.sayHello();
 
 // const greet = person.sayHello;
 
@@ -38,6 +41,10 @@ const obj = {
 // Using bind method
 const f = person.bind(obj);
 
+// ..
+// ..
+// ...
+
 // f("Vivek", 23);
 
 
@@ -46,7 +53,7 @@ const f = person.bind(obj);
 // person.call(obj, "Garvit", 24);
 
 
-// apply
+// apply - HomeWOrk
 
 
 

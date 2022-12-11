@@ -1,5 +1,5 @@
 
-
+// IIFEs - Immediately invoked function expression
 (
     function () {
         var a = 100;
