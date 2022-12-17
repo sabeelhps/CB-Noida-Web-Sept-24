@@ -40,13 +40,13 @@ class PizzaStore{
             const obj = this;
             setTimeout(function() {
                 const orderId = "PZ" + String(Math.floor(Math.random() * 8999 + 1000));
-                const totalAmount = obj.cart.reduce((total, curr) => total + curr.price, 0);
-                resolve({orderId, totalAmount});
+                const orderAmount = obj.cart.reduce((total, curr) => total + curr.price, 0);
+                resolve({orderId, orderAmount});
             }, 2000);
         })
     }
 
-    static proceedToPayment(orderId, amount) {
+    static proceedToPayment(orderId) {
         return new Promise((resolve, reject) => {
             const obj = this;
             setTimeout(function() {
@@ -69,11 +69,30 @@ class PizzaStore{
 
 
 
-async function main() {
-    // const pizzas = await PizzaStore.getAllPizzas();
-    // console.log(pizzas);
-    const {orderId,totalAmount} = await PizzaStore.placeOrder();
+// async function main() {
+//     // const pizzas = await PizzaStore.getAllPizzas();
+//     // console.log(pizzas);
+//     const {orderId,totalAmount} = await PizzaStore.placeOrder();
   
+// }
+
+// main();
+
+
+
+async function createPizzaOrder() {
+    try {
+        const { orderId, orderAmount } = await PizzaStore.placeOrder();
+        console.log(`Order Placed with ${orderId} OrderId.Proceeding to the payment page`);
+        const { paymentId } = await PizzaStore.proceedToPayment(orderId);
+        console.log(`Payment successfull with paymentId : ${paymentId}`);
+        const updatedWalletAmount = await PizzaStore.updateWallet(orderAmount);
+        console.log('Updated Wallet amount');
+    }
+    catch (err) {
+        console.log('Something went wrong');
+        console.log(err.message);
+    }
 }
 
-main();
+createPizzaOrder();
