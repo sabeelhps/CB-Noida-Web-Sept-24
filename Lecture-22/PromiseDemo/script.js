@@ -1,4 +1,5 @@
 class PizzaStore{
+    
     static cart = [
         {   
             id:999,
@@ -83,11 +84,11 @@ class PizzaStore{
 async function createPizzaOrder() {
     try {
         const { orderId, orderAmount } = await PizzaStore.placeOrder();
-        console.log(`Order Placed with ${orderId} OrderId.Proceeding to the payment page`);
+        console.log(`Order Placed with OrderId : ${orderId}.Proceeding to the payment page`);
         const { paymentId } = await PizzaStore.proceedToPayment(orderId);
         console.log(`Payment successfull with paymentId : ${paymentId}`);
         const updatedWalletAmount = await PizzaStore.updateWallet(orderAmount);
-        console.log('Updated Wallet amount');
+        console.log(`Updated Wallet amount : ${updatedWalletAmount}`);
     }
     catch (err) {
         console.log('Something went wrong');
