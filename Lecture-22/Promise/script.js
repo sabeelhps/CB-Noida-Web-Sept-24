@@ -165,7 +165,7 @@ const URL = 'http://facebook/storage/profile.jpg';
 //     });
 
 
-async function main() {
+async function main(URL) {
     const fileName = await downloadFile(URL);
     const compressedPath = await compressFile(fileName);
     const uploadedPath = await uploadFile(compressedPath);

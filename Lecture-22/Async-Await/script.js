@@ -69,3 +69,13 @@ console.log('After the main function call');
 console.log('After the main function call');
 console.log('After the main function call');
 
+
+
+// Resolve should only pass a single argument
+const makePromise = () => new Promise((resolve, reject) => resolve({ a:1, b:2}));
+
+makePromise().then((val) => {
+    console.log(val.a);
+    console.log(val.b);
+});
+
