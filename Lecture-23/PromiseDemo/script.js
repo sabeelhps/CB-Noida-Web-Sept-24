@@ -68,7 +68,7 @@ class PizzaStore{
     }
 
     static updatePizzaById(pizzaId) {
-        return new Promise((resolve,reject) => {
+        return new Promise((resolve, reject) => {
             const obj = this;
             setTimeout(() => {
                 const discountedCart = obj.cart.map((item) => {
@@ -77,7 +77,7 @@ class PizzaStore{
                 obj.cart = discountedCart;
                 resolve(true);
             }, 2000);
-        })
+        });
     }
 }
 
@@ -120,7 +120,28 @@ function sendNotification() {
 }
 
 async function updateBulkPizza(...pizzaIds) {
-    
+    // 1st Way
+    // console.time('timer');
+    // for (let id of pizzaIds) {
+    //     await PizzaStore.updatePizzaById(id);
+    // }
+    // const pizzas = await PizzaStore.getAllPizzas();
+    // console.log(pizzas);
+    // console.timeEnd('timer');
+
+    // 2nd way
+
+    console.time('second-timer');
+    const updatePromises = [];
+
+    for (let id of pizzaIds) {
+        updatePromises.push(PizzaStore.updatePizzaById(id));
+    }
+    const res = await Promise.all(updatePromises);
+    console.log(res);
+    const pizzas = await PizzaStore.getAllPizzas();
+    console.log(pizzas);
+    console.timeEnd('second-timer');
 }
 
 updateBulkPizza(999, 777, 666);
