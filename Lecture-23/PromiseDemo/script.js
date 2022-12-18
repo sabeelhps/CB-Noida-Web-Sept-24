@@ -68,7 +68,7 @@ class PizzaStore{
     }
 
     static updatePizzaById(pizzaId) {
-        return new Promise(() => {
+        return new Promise((resolve,reject) => {
             const obj = this;
             setTimeout(() => {
                 const discountedCart = obj.cart.map((item) => {
