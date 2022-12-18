@@ -2,19 +2,23 @@ import os
 import csv
 import pandas as pd
 
-# rootdir = '/Users/codingblocks/desktop/python-demo'
-# orderDir = '/Users/codingblocks/desktop/python-demo/files/data-ops-assignment/order'
-# customerDir = '/Users/codingblocks/desktop/python-demo/files/data-ops-assignment/customer'
+# rootdir = '/Users/sarthakgarg/Desktop/python-demo'
+# orderDir = '/Users/sarthakgarg/Desktop/python-demo/files/data-ops-assignment/order'
+# customerDir = '/Users/sarthakgarg/Desktop/python-demo/files/data-ops-assignment/customer'
 
-rootdir = '/Users/codingblocks/desktop/python-demo'
-orderDir = '/Users/codingblocks/desktop/python-demo/files_demo/data-ops-assignment/order'
-customerDir = '/Users/codingblocks/desktop/python-demo/files_demo/data-ops-assignment/customer'
+BASE_PATH = '/Users/codingblocks/desktop'
+
+rootdir = BASE_PATH + '/python-demo'
+orderDir = BASE_PATH + '/python-demo/files_demo/data-ops-assignment/order'
+customerDir = BASE_PATH + '/python-demo/files_demo/data-ops-assignment/customer'
+productDir = BASE_PATH + '/python-demo/files_demo/data-ops-assignment/product'
 
 # Total Number of customers read from the file = 796109 
 
 
 # READ ALL CUSTOMER'S DATA FROM THE ORDERS FOLDER
 def readAllOrders():
+    print('starting to read the all orders csv files')
     ordersList = []
     for file in os.listdir(orderDir):
         d = os.path.join(orderDir, file)
@@ -34,6 +38,7 @@ def readAllOrders():
 
 # READ ALL CUSTOMER DATA FROM THE CUSTOMER TABLE
 def readAllCustomers():
+    print('starting to read the customer csv files')
     customerList = []
     for file in os.listdir(customerDir):
         d = os.path.join(customerDir, file)
@@ -45,16 +50,9 @@ def readAllCustomers():
     return customerList
 
 
-def getAllUniqueCities(allCustomers):
-    cities = set()
-    for customer in allCustomers:
-        if len(customer[1]):
-            cities.add(customer[1].lower())
-    return list(cities)
-
 
 # CREATE CUSTOMER ID, CITY DATAFRAME CUSTOMERLIST
-def createCustomerIdAndCityDataframe(customerList, cities):
+def createCustomerIdAndCityDataframe(customerList):
     city_customerid_df = {}
 
     city_customerid_df["customer_id"]=[]
@@ -91,20 +89,80 @@ def createOrdersDataframe(orderList):
     
     return orders_df
 
-def main():
-    customerList = readAllCustomers()
-    orderList = readAllOrders()
-    cities = getAllUniqueCities(customerList)
-    city_customerid_df = pd.DataFrame(createCustomerIdAndCityDataframe(customerList, cities)) 
-    orders_df = pd.DataFrame(createOrdersDataframe(orderList))
-    mergedRes = pd.merge(city_customerid_df, orders_df, on ='customer_id')
 
-    mf = mergedRes.groupby(['cities']).agg(
+# READ ALL PRODUCT DATA FROM THE PRODUCT TABLE
+def readAllProducts():
+    print('starting to read all products csv files')
+    productList = []
+    for file in os.listdir(productDir):
+        d = os.path.join(productDir, file)
+        if os.path.isfile(d) and '.csv' in d:
+            with open(d, 'r') as csvfile:
+                csvreader = csv.reader(csvfile)
+                for row in csvreader:
+                    productList.append(row)
+                    # print(row)
+    return productList
+
+
+
+# CREATE PRODUCT ID, BRAND DATAFRAME PRODUCTLIST
+def createProductIdAndBrandIdDataframe(productList):
+    brandid_productid_df = {}
+
+    brandid_productid_df["product_id"]=[]
+    brandid_productid_df["brand_id"]=[]
+
+    for product_id,brand_id in productList:
+        if len(brand_id):
+            brandid_productid_df["product_id"].append(product_id)
+            brandid_productid_df["brand_id"].append(brand_id)
+        else:
+            brandid_productid_df["product_id"].append(product_id)
+            brandid_productid_df["brand_id"].append("NULL")
+    return brandid_productid_df
+
+
+
+def getCitiesAndOrderCountAndOrderAmountGroupByCities(city_customerid_df, orders_df):
+    mergedRes1 = pd.merge(city_customerid_df, orders_df, on ='customer_id')
+    mf1 = mergedRes1.groupby(['cities']).agg(
         count_order = ('order_count', 'sum'),
         order_amount = ('order_amount', 'sum'),
     )
 
-    mf.reset_index().to_csv('new.csv')
+    mf1.reset_index().to_csv('./results/OrdersCity.csv')
+    print('OrdersCity.csv file created and saved')
+
+
+def getBrandIdAndOrderCountAndOrderAmountGroupByBrandId(brandid_productid_df, orders_df):
+    mergedRes2 = pd.merge(brandid_productid_df, orders_df, on ='product_id')
+
+    mf2 = mergedRes2.groupby(['brand_id']).agg(
+        count_order = ('order_count', 'sum'),
+        order_amount = ('order_amount', 'sum'),
+    )
+    mf2.reset_index().to_csv('./results/OrdersBrand.csv')
+    print('OrdersBrand.csv file created and saved')
+
+def main():
+     
+    customerList = readAllCustomers()
+    orderList = readAllOrders()
+    productList = readAllProducts()
     
+    city_customerid_df = pd.DataFrame(createCustomerIdAndCityDataframe(customerList)) 
+    orders_df = pd.DataFrame(createOrdersDataframe(orderList))
+    brandid_productid_df = pd.DataFrame(createProductIdAndBrandIdDataframe(productList))
+
+    
+    # write comment here
+    getCitiesAndOrderCountAndOrderAmountGroupByCities(city_customerid_df, orders_df)    
+    
+    # write your comment here
+    getBrandIdAndOrderCountAndOrderAmountGroupByBrandId(brandid_productid_df, orders_df)
+
+
+# method to start a script
 main()
 
