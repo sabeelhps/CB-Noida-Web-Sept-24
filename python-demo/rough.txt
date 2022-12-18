@@ -1,0 +1,25 @@
+Order
+    - OrderId
+    - Customer Id
+    - ProductId
+    - Amount
+    - Year
+    - No of order
+
+Customer
+    - CustomerId
+    - city
+
+OrdersCity(order_month, customer_city, no_of_orders, total_amount)
+
+Select customer_city, count(no_of_orders), sum(total_amount) Inner Join Order.CustomerId=Customer.CustomerId group by customer_city;
+
+CustomerId customer_city Month total_orders total_amount 
+
+
+customer_city total_orders total_amount 
+
+
+
+
+No city      
