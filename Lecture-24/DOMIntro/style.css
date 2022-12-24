@@ -1,0 +1,26 @@
+.top-heading{
+    border: 2px solid black;
+    color: lightcoral;
+    background-color: aqua;
+    padding: 10px 0px;
+    margin: 2rem 4rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.second-class{
+    text-transform: uppercase;
+}
+
+.a{
+    text-decoration: line-through;
+}
+
+#drop-down{
+    border: 3px solid #ccc;
+    padding: 1rem;
+}
+
+.hide{
+    display: none;
+}
+
