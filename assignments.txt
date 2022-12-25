@@ -13,3 +13,13 @@
 7.Complete Tour and Travels Home Page
 
 8.Twitter clone - home page or Spotify Clone (Bootstrap - 99%)
+
+9. Todo List 
+    - create Todo
+    - delete Todo
+    - move up
+    - move down
+    - mark completed
+
+10. Create bootstrap like repsonsive Navbar
+
