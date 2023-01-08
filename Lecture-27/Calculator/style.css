@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    border: 2px solid black;
+    border-radius: 8px;
+    margin: 2rem auto;
+    max-width: 400px;
+}
+
+h2{
+    text-align: center;
+}
+
+#screen{
+    width: 95%;
+    font-size: 2.0rem;
+    display: block;
+    margin: 0px auto;
+}
+
+#screen:focus{
+    outline: none;
+}
+
+table{
+    border: 2px solid green;
+    width: 100%;
+    margin-top:10px ;
+}
+
+#container table td{
+    /* border: 1px solid red; */
+    height: 50px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.16);
+}
+
+#container table td button{
+    width: 100%;
+    height: 100%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 200ms;
+    border-radius: 8px;
+}
+
+#container table td button:active{
+    transform: scale(0.8);
+}
