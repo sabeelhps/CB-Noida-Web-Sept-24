@@ -1,0 +1,2 @@
+This is the abc.txt file
+We are working on fs module in node
