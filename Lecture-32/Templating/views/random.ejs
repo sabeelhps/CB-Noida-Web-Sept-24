@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+<%- include("./partials/header") %> 
+<%- include("./partials/navbar") %> 
 
-    <h1>Random number is <%=randomNum%> </h1>
 
-    <%if(randomNum%2===0){%>
-        <h2>Even</h2>
-    <%}else{%>
-        <h2>Odd</h2>
-    <%}%>
-    
-</body>
-</html>
+<h1>Random number is <%=randomNum%> </h1>
+<%if(randomNum%2===0){%>
+    <h2>Even</h2>
+<%}else{%>
+    <h2>Odd</h2>
+<%}%>
+
+<%- include("./partials/footer") %> 
