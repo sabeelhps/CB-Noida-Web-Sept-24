@@ -26,6 +26,16 @@ app.get('/todos', (req, res) => {
     res.status(200).json(todos);
 });
 
+
+// the below endpoints should be added the end of the server file
+app.get('*', (req, res) => {
+    res.send('You made the invalid request');
+});
+
+app.all('*', (req, res) => {
+    res.send('You are requesting the wrong URL!!!!!');
+});
+
 app.listen(3000,()=>{
   console.log('server started at port 3000');
 });
