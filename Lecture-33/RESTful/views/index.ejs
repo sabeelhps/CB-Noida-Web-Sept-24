@@ -1,0 +1,18 @@
+<%- include("./partials/header")  %> 
+
+<main class="container w-50">
+    <% for(let blog of blogs) {%>
+        <div class="card mb-3">
+            <img src="<%=blog.imageUrl%>" class="card-img-top" alt="<%=blog.title%> ">
+            <div class="card-body">
+                <h5 class="card-title"><%=blog.title%></h5>
+                <p class="card-text"><%=blog.blogText%> </p>
+                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <a href="/blogs/<%=blog.id%>" class="btn btn-sm btn-dark">Read More</a>
+                <a href="/blogs/<%=blog.id%>/edit" class="btn btn-sm btn-warning">Edit</a>
+            </div>
+        </div>
+    <% } %>  
+</main>
+
+<%- include("./partials/footer")  %> 

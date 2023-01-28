@@ -1,0 +1,22 @@
+<%- include("./partials/header")  %> 
+<main class="container">
+    <h1>Edit</h1>
+    <form class="border rounded p-3" action="/blogs/<%=blog.id%>?_method=PATCH" method="post">
+        <div class="mb-3">
+            <label class="form-label" for="title">Title</label>
+            <input class="form-control" type="text" name="title" id="title" value="<%=blog.title%>">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="imageUrl">Image Url</label>
+            <input class="form-control" type="text" name="imageUrl" id="imageUrl" value="<%=blog.imageUrl%>">
+        </div>
+        <div class="mb-3">
+            <label class="form-label"  for="blog-text">Blog Text</label>
+            <textarea class="form-control" name="blogText" id="blog-text" cols="30" rows="10">
+                <%=blog.blogText%> 
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-sm btn-success">Update</button>
+      </form>
+</main>
+<%- include("./partials/footer")  %> 
