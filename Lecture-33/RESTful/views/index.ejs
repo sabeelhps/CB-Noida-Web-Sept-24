@@ -10,6 +10,9 @@
                 <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 <a href="/blogs/<%=blog.id%>" class="btn btn-sm btn-dark">Read More</a>
                 <a href="/blogs/<%=blog.id%>/edit" class="btn btn-sm btn-warning">Edit</a>
+                <form class="d-inline-block" action="/blogs/<%=blog.id%>?_method=DELETE" method="post">
+                    <button class="btn btn-sm btn-danger">Delete</button>
+                </form>
             </div>
         </div>
     <% } %>  

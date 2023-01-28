@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
     res.send("Home Route");
 });
 
-const blogs = [
+let blogs = [
     {
         id: uuid(),
         title: "My First Blog",
@@ -84,6 +84,12 @@ app.patch('/blogs/:blogId', (req, res) => {
     res.redirect(`/blogs/${blogId}`);
 });
 
+app.delete('/blogs/:blogId', (req, res) => {
+    const { blogId } = req.params;
+    const newBlogsList = blogs.filter((blog) => blog.id !== blogId);
+    blogs = newBlogsList;
+    res.redirect('/blogs');
+})
 
 app.listen(3000,()=>{
   console.log('server started at port 3000');
