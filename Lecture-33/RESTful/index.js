@@ -86,6 +86,9 @@ app.patch('/blogs/:blogId', (req, res) => {
 
 app.delete('/blogs/:blogId', (req, res) => {
     const { blogId } = req.params;
+    const blog = blogs.find((blog) => blog.id === blogId);
+    // If blog doesnt exists
+    if (!blog) return res.status(404).send('Bad Request');
     const newBlogsList = blogs.filter((blog) => blog.id !== blogId);
     blogs = newBlogsList;
     res.redirect('/blogs');

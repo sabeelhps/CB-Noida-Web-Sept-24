@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "author":"ABC",
+        "title":"Hello",
+        "tweetText":"some text",
+        "comments":[
+            {   
+                "id":1,
+                "commentText":"Awesome Tweet",
+            },
+             {   
+                "id":2,
+                "commentText":"Nice Tweet",
+            }
+        ],
+        "username":"ABC_User",
+        "dob":"01-02-2003"
+    },
+    {
+        "id": 2,
+        "author":"DEF",
+        "title":"World",
+        "tweetText":"some text",
+        "comments":[
+            {   
+                "id":1,
+                "commentText":"Go to hell",
+            }
+        ]
+    }
+]
