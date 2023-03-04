@@ -19,4 +19,15 @@ router.patch('/:id', catchAsync(productController.updateProduct));
 
 router.delete('/:id', catchAsync(productController.deleteProduct));
 
+
+// Above routes can be written as below also----------------------
+// router.route('/')
+//     .get(catchAsync(productController.getAllProduct))
+//     .post(catchAsync(productController.createProduct));
+
+// router.route('/:id')
+//     .get(catchAsync(productController.showProduct))
+//     .patch(catchAsync(productController.updateProduct))
+//     .delete(catchAsync(productController.deleteProduct));
+
 export default router;
