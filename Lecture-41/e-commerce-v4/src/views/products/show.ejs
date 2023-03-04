@@ -1,0 +1,26 @@
+<% layout('layout/boilerplate') -%>
+
+<div class="row">
+    <div class="col-lg-6">
+        <div class="col-lg-4">
+            <div class="card mx-auto mb-3" style="width: 23rem;">
+                <img src="<%=product.imageUrl%>" class="card-img-top" alt="<%=product.name%>">
+                <div class="card-body">
+                    <h5 class="card-title"><%=product.name%> </h5>
+                    <p class="card-text"><%=product.desc%></p>
+                    <h5 class="card-title">$<%=product.price%> </h5>
+                    <a href="#" class="btn btn-sm btn-primary">Buy Now</a>
+                    <a href="/api/v1/products/<%=product._id%>/edit" class="btn btn-sm btn-warning">Edit</a>
+                    <form action="/api/v1/products/<%=product._id%>?_method=DELETE" class="d-inline-block" method="post">
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+                    <a href="#" class="btn btn-sm btn-secondary">Add To Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5">
+        <h1 class="display-6">Leave a Review</h1>
+       
+    </div>
+</div>
