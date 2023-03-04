@@ -47,11 +47,11 @@
 
 ## Steps to add ESLint to your project
 
-1. Install eslint to your project as dev dependency using `npm i -D eslint`.
+1. Install eslint to your project as dev dependency using `npm i -D eslint`
 
-2. Run the command to setup eslint configuration `npm eslint --init`.
+2. Run the command to setup eslint configuration `npm eslint --init`
 
-3. Add script as specified above to lint the project `"lint": "npx eslint ."` in package.json file
+3. Add script as specified above to lint the project `"lint": "npx eslint ."` in package.json file.
 
-4. Add eslint script to fix the errors `"lint:fix": "npx eslint --fix ."`.
+4. Add eslint script to fix the errors `"lint:fix": "npx eslint --fix ."`
     
