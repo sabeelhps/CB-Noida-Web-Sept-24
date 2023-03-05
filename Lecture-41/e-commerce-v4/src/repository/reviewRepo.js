@@ -1,9 +1,7 @@
-import Review from "../models/review";
+import Review from '../models/review';
 
-const createReview = (review) => {
-    return Review.create(review);
-}
+const createReview = (review) => Review.create(review);
 
 export default {
-    createReview
-}
+  createReview,
+};

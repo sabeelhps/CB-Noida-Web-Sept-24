@@ -9,12 +9,12 @@ const productSchema = new mongoose.Schema({
   reviews: [
     {
       type: mongoose.Schema.Types.ObjectId,
-      ref:'Review'
-    }
-  ]
+      ref: 'Review',
+    },
+  ],
 });
 
-productSchema.post('findOneAndDelete', async function (product) {
+productSchema.post('findOneAndDelete', async (product) => {
   await Review.deleteMany({ _id: { $in: product.reviews } });
 });
 

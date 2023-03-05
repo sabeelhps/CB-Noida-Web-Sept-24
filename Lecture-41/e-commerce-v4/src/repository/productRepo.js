@@ -11,14 +11,10 @@ const updateProductById = (id, product) => Product.findByIdAndUpdate(id, product
 
 const deleteProductById = (id) => Product.findByIdAndDelete(id);
 
-const saveProduct = (product) => {
-  return product.save();
-}
+const saveProduct = (product) => product.save();
 
-const findProductByIdWithReviews = (id) => {
-  return Product.findById(id)
-    .populate('reviews');
-}
+const findProductByIdWithReviews = (id) => Product.findById(id)
+  .populate('reviews');
 
 export default {
   getAllProducts,
@@ -27,5 +23,5 @@ export default {
   updateProductById,
   deleteProductById,
   saveProduct,
-  findProductByIdWithReviews
+  findProductByIdWithReviews,
 };
