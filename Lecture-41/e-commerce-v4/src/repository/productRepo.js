@@ -5,12 +5,20 @@ const getAllProducts = () => Product.find({})
 
 const createProduct = (product) => Product.create(product);
 
-const findProductById = (id) => Product.findById(id)
-  .lean();
+const findProductById = (id) => Product.findById(id);
 
 const updateProductById = (id, product) => Product.findByIdAndUpdate(id, product, { new: true });
 
 const deleteProductById = (id) => Product.findByIdAndDelete(id);
+
+const saveProduct = (product) => {
+  return product.save();
+}
+
+const findProductByIdWithReviews = (id) => {
+  return Product.findById(id)
+    .populate('reviews');
+}
 
 export default {
   getAllProducts,
@@ -18,4 +26,6 @@ export default {
   findProductById,
   updateProductById,
   deleteProductById,
+  saveProduct,
+  findProductByIdWithReviews
 };

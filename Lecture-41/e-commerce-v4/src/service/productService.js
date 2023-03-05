@@ -13,7 +13,7 @@ const createProduct = (product) => {
 };
 
 const findProductById = async (id) => {
-  const product = await productRepo.findProductById(id);
+  const product = await productRepo.findProductByIdWithReviews(id);
   if (!product) throw new BadRequestError(`Product with the id : ${id} doesn't exist`);
   return product;
 };
