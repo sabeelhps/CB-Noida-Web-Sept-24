@@ -1,7 +1,7 @@
 import express from 'express';
 import catchAsync from '../../core/catchAsync';
 import productController from '../../controllers/productController';
-import isLoggedIn from '../../middleware/authMiddleware';
+import isLoggedIn, { isSeller } from '../../middleware/authMiddleware';
 import { validateProduct } from '../../validations/validator';
 
 const router = express.Router();
@@ -11,7 +11,7 @@ router.get('/', catchAsync(productController.getAllProduct));
 
 router.get('/new', isLoggedIn, catchAsync(productController.displayFormForNewProduct));
 
-router.post('/', isLoggedIn,validateProduct, catchAsync(productController.createProduct));
+router.post('/', isLoggedIn, validateProduct, isSeller, catchAsync(productController.createProduct));
 
 router.get('/:id', catchAsync(productController.showProduct));
 
