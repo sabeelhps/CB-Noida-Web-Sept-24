@@ -1,0 +1,10 @@
+1. Add delete feature for review.
+2. Add like/dislike for products.
+3. Implement average rating.
+4. Facebook Login
+5. Implement Forgot Password
+6. Single user login at a time with given username
+7. Implement add to cart features.
+
+Project Description : https://github.com/sabeelhps/CB-Noida-Web-Apr-3/blob/master/project-description.txt
+
