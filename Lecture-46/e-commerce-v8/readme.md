@@ -1,4 +1,4 @@
-# Steps to setup a NodeJS project 🔨 .
+# Steps to setup a NodeJS project  🔨 .
 
 ## Steps to setup babel with NodeJS
 1. Create a package.json file use `npm init`
@@ -55,7 +55,7 @@
 
 4. Add eslint script to fix the errors `"lint:fix": "npx eslint --fix ."`
 
-## Shopping cart deployed heroku link 👇 
+## Shopping cart deployed heroku link  👇 
 [https://obscure-temple-39637.herokuapp.com](https://obscure-temple-39637.herokuapp.com)
 
     
