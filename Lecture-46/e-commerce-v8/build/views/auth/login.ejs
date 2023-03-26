@@ -1,0 +1,19 @@
+<% layout('layout/boilerplate') -%>
+
+<div class="border p-3 mx-auto w-50">
+    <h1>Login</h1>
+    <form action="/api/v1/auth/login" method="post">
+        <div class="mb-3">
+            <label class="form-label" for="username">Username</label>
+            <input class="form-control" type="text" name="username" id="username">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" for="password">Password</label>
+            <input class="form-control" type="password" name="password" id="password">
+        </div>
+        <button type="submit" class="btn btn-sm btn-success">Login</button>
+        <div class="my-3">
+            <p>Don't have an account ? <a href="/api/v1/auth/register">SignUp</a> </p>
+        </div>
+    </form>
+</div

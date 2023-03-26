@@ -7,6 +7,7 @@ import flash from 'connect-flash';
 import passport from 'passport';
 import LocalStrategy from 'passport-local';
 import MongoStore from 'connect-mongo';
+import { database, secret, node_env } from './config';
 
 import v1Routes from './routes/v1';
 import User from './models/user';
@@ -21,17 +22,17 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.json({ limit: '10mb' }));
 app.use(methodOverride('_method'));
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/e-commerce-db';
+const dbUrl = database[node_env].dbUrl; 
 
 const store = MongoStore.create({
-  secret: process.env.SECRET,
+  secret: secret,
   mongoUrl: dbUrl,
   touchAfter: 24 * 60 * 60, // time period in seconds
-})
+});
 
 const sessionConfig = {
   store: store,
-  secret: process.env.SECRET || 'weneedabettersecret',
+  secret: secret,
   resave: false,
   saveUninitialized: true,
   cookie: {

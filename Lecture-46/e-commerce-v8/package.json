@@ -4,7 +4,7 @@
   "description": "This is e-commerce platform ",
   "main": "server.js",
   "scripts": {
-    "build": "babel ./src --out-dir ./build",
+    "build": "babel ./src --out-dir ./build && copyfiles -u 1 'src/views/**/*' 'build/' && copyfiles -u 1 'src/public/**/*' 'build/'",
     "start": "node build/server.js",
     "dev": "nodemon --exec babel-node src/server.js",
     "lint": "npx eslint .",
@@ -34,6 +34,7 @@
     "@babel/core": "^7.21.0",
     "@babel/node": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.34.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5"

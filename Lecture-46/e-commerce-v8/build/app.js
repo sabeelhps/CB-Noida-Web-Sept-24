@@ -12,6 +12,8 @@ var _expressSession = _interopRequireDefault(require("express-session"));
 var _connectFlash = _interopRequireDefault(require("connect-flash"));
 var _passport = _interopRequireDefault(require("passport"));
 var _passportLocal = _interopRequireDefault(require("passport-local"));
+var _connectMongo = _interopRequireDefault(require("connect-mongo"));
+var _config = require("./config");
 var _v = _interopRequireDefault(require("./routes/v1"));
 var _user = _interopRequireDefault(require("./models/user"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -28,8 +30,16 @@ app.use(_express.default.json({
   limit: '10mb'
 }));
 app.use((0, _methodOverride.default)('_method'));
+const dbUrl = _config.database[_config.node_env].dbUrl;
+const store = _connectMongo.default.create({
+  secret: _config.secret,
+  mongoUrl: dbUrl,
+  touchAfter: 24 * 60 * 60 // time period in seconds
+});
+
 const sessionConfig = {
-  secret: process.env.SECRET || 'weneedabettersecret',
+  store: store,
+  secret: _config.secret,
   resave: false,
   saveUninitialized: true,
   cookie: {

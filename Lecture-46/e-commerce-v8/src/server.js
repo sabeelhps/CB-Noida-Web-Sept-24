@@ -1,7 +1,3 @@
-import * as dotenv from 'dotenv';
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config()
-}
 import app from './app';
 import db from './database';
 import logger from './core/logger';

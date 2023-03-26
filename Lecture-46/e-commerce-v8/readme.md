@@ -54,4 +54,8 @@
 3. Add script as specified above to lint the project `"lint": "npx eslint ."` in package.json file.
 
 4. Add eslint script to fix the errors `"lint:fix": "npx eslint --fix ."`
+
+
+[Shopping Cart Deployed Link](https://obscure-temple-39637.herokuapp.com/api/v1/auth/login)
+
     
