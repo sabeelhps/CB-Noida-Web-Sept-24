@@ -7,19 +7,19 @@ export default {
   development: {
     dbUrl: 'mongodb://localhost:27017/e-commerce-db',
     port: 27017,
-    username: 'user',
-    password: 'password',
+    username: process.env.username || '',
+    password: process.env.password || '',
   },
   test: {
     dbUrl: 'mongodb://localhost:27017/e-commerce-db',
     port: 27017,
-    username: 'user',
-    password: 'password',
+    username: process.env.username || '',
+    password: process.env.password || '',
   },
   production: {
     dbUrl: process.env.DB_URL,
     port: 27017,
-    username: 'user',
-    password: 'password',
+    username: '',
+    password: '',
   },
 };
