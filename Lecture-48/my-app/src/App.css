@@ -1,0 +1,35 @@
+
+.App {
+  text-align: center;
+}
+
+.food-item{
+  width: 380px;
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+}
+
+.food-item img{
+  width: 100%;
+}
+
+.navbar ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.5rem;
+  background-color: rgb(83, 32, 32);
+  color: white;
+  font-size: 1.5rem;
+}
+
+.food-list{
+  width: 90vw;
+  margin: 0px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
