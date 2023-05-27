@@ -23,3 +23,7 @@ input:focus{
 form button{
     font-size: 1.5rem;
 }
+
+.invalid-inp{
+    border: 3px solid red;
+}

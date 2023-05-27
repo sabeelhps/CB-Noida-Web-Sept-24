@@ -2,7 +2,7 @@ import React from 'react';
 import Todo from '../Todo/Todo';
 import styles from './TodoList.module.css';
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos, toggleCompleted,deleteTodo}) => {
     return (
         <ul className={styles['todo-list']}>
             {
@@ -12,6 +12,8 @@ const TodoList = ({todos}) => {
                         id={todo.id}
                         task={todo.task}
                         completed={todo.completed}
+                        toggleCompleted={toggleCompleted}
+                        deleteTodo={deleteTodo}
                     />
                 })
             }

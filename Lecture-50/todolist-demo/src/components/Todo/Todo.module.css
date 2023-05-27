@@ -4,9 +4,18 @@
     background-color: lightblue;
     margin-bottom: 0.5rem;
     font-size: 1.3rem;
-    display: flex;
 }
 
 .todo-item span{
     margin-left: 1rem;
+}
+
+.completed{
+    text-decoration: line-through;
+}
+
+.delete-btn{
+    float: right;
+    margin-right: 20px;
+    cursor: pointer;
 }
