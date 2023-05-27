@@ -1,0 +1,12 @@
+.todo-item{
+    border: 2px solid black;
+    padding: 0.5rem;
+    background-color: lightblue;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    display: flex;
+}
+
+.todo-item span{
+    margin-left: 1rem;
+}
