@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.App ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+  background-color: black;
+  color: white;
+  padding: 1rem 0;
+}
+
+.App ul li{
+  cursor: pointer;
+}
+
+.active{
+  color: white;
+  font-weight: bold;
+}
+
+figure{
+  width: 300px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+figure img{
+  width: 100%;
+}
